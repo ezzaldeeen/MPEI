@@ -16,10 +16,15 @@ public class ParserMerger {
     private final List<HashMap<String, List<String>>> buffers = new ArrayList<>();
     // the absolute path for the sub-inverted indices
     private final String DIR_PATH;
+    private final String OUTPUT_PATH;
 
-    public ParserMerger(String directoryPath, int capacity) {
+
+    public ParserMerger(String directoryPath,
+                        int capacity,
+                        String outputPath) {
         this.MAX_CAPACITY = capacity;
         this.DIR_PATH = directoryPath;
+        this.OUTPUT_PATH = outputPath;
 
         File[] files = getFiles();
         for (File file : files) {
@@ -90,7 +95,6 @@ public class ParserMerger {
                     HashMap<String, List<String>> buffer = new HashMap<>();
                     try {
                         String absolutePath = file.getAbsolutePath();
-                        String fileName = file.getName();
                         while (buffer.size() < MAX_CAPACITY) {
                             // get the last line index that read
                             int lineNum = fileStatus.get(absolutePath);
@@ -163,8 +167,7 @@ public class ParserMerger {
                 currentCapacity = 0;
             }
             if (isFinished()) {
-                writeToFile(mergedInvIndex, "inverted_index.txt");
-                System.out.println("MERGED!");
+                writeToFile(mergedInvIndex, OUTPUT_PATH);
                 return;
             }
         }

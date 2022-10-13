@@ -3,7 +3,7 @@ package org.example;
 public class Main {
     public static void main(String[] args) {
 
-        ParserMerger parserMerger = new ParserMerger(args[0], 3);
+        ParserMerger parserMerger = new ParserMerger(args[0], 5, "inverted_index.txt");
 
         Thread parser = new Thread(new Runnable() {
             @Override
