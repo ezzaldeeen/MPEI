@@ -1,0 +1,15 @@
+about,5,d11,d21,d22,d40,d43
+above,3,d12,d15,d17
+abroad,3,d120,d122,d130
+abrupt,2,d13,d16
+absence,5,d1,d2,d4,d6,d7
+absolute,3,d71,d88,d91
+absolutely,4,d14,d16,d18,d19
+accelerate,1,d6
+accelerated,1,d9
+accept,2,d13,d14
+acceptable,2,d4,d9
+acceptance,1,d9
+acceptances,3,d11,d19,d61
+accepted,2,d8,d14
+agree,3,d1,d2,d37
